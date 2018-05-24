@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="博客">
 <meta property="og:description" content="php语言在网络安全方面的应用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-24T14:44:09.335Z">
+<meta property="og:updated_time" content="2018-05-24T15:02:56.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php相关知识点记录">
 <meta name="twitter:description" content="php语言在网络安全方面的应用">
@@ -341,15 +341,15 @@
 
       
         <p>php语言在网络安全方面的应用<br> <a id="more"></a></p>
-<h2 id="GET方法"><a href="#GET方法" class="headerlink" title="$_GET方法"></a>$_GET方法</h2><pre><code>- 直接在网页浏览器地址栏加上&apos;?[变量名]=[变量值]&apos;
+<h2 id="0x01-GET方法"><a href="#0x01-GET方法" class="headerlink" title="0x01 $_GET方法"></a>0x01 $_GET方法</h2><pre><code>- 直接在网页浏览器地址栏加上&apos;?[变量名]=[变量值]&apos;
 - 在第一种方法不行时，尝试采用%00进行截断，特别是对那些变量值先后进行字符和数字判断时
-</code></pre><h2 id="POST方法："><a href="#POST方法：" class="headerlink" title="$_POST方法："></a>$_POST方法：</h2><pre><code>1. 使用抓包工具(如：burpsuite)修改数据包中的变量值
+</code></pre><h2 id="0x02-POST方法："><a href="#0x02-POST方法：" class="headerlink" title="0x02 $_POST方法："></a>0x02 $_POST方法：</h2><pre><code>1. 使用抓包工具(如：burpsuite)修改数据包中的变量值
 2. 使用浏览器插件(如：FireFox的hackbar)生成所需变量值的URL路径
 3. 使用python爬虫代码将所需变量值通过requests方法与URL合并并读取响应内容
-</code></pre><h2 id="php的strcmp函数："><a href="#php的strcmp函数：" class="headerlink" title="php的strcmp函数："></a>php的strcmp函数：</h2><pre><code>- 在使用时，除了该函数本身所拥有的判断条件，即两者相等等于零，前者大就大于零，反之小于零外，当前者的类型与后者不相等时，如前者为数组，后者为数字或字符串时，也会报错，返回值为零。（注：数字与字符串之间是）
+</code></pre><h2 id="0x03-php的strcmp函数："><a href="#0x03-php的strcmp函数：" class="headerlink" title="0x03 php的strcmp函数："></a>0x03 php的strcmp函数：</h2><pre><code>- 在使用时，除了该函数本身所拥有的判断条件，即两者相等等于零，前者大就大于零，反之小于零外，当前者的类型与后者不相等时，如前者为数组，后者为数字或字符串时，也会报错，返回值为零。（注：数字与字符串之间是）
 - 原理：其实php为了可以上传一个数组，会把结尾带一对中括号的变量，例如 xxx[]的name（就是$_POST中的key），当作一个名字为xxx的数组
-</code></pre><h2 id="extract变量覆盖："><a href="#extract变量覆盖：" class="headerlink" title="extract变量覆盖："></a>extract变量覆盖：</h2><pre><code>extract函数会将所传入的数组值按照参数名与参数值之间的关系生成代码变量，导入到当前符号表中。对于在函数调用前就已定义好的变量名，若数组内有参数名与其相同，则会覆盖该变量的定义值，造成变量覆盖问题。
-</code></pre><h2 id="php-filter的运用："><a href="#php-filter的运用：" class="headerlink" title="php://filter的运用："></a>php://filter的运用：</h2><pre><code>- php://filter是php的一个协议，可作为一个中间流来处理其他流。
+</code></pre><h2 id="0x04-extract变量覆盖："><a href="#0x04-extract变量覆盖：" class="headerlink" title="0x04 extract变量覆盖："></a>0x04 extract变量覆盖：</h2><pre><code>extract函数会将所传入的数组值按照参数名与参数值之间的关系生成代码变量，导入到当前符号表中。对于在函数调用前就已定义好的变量名，若数组内有参数名与其相同，则会覆盖该变量的定义值，造成变量覆盖问题。
+</code></pre><h2 id="0x05-php-filter的运用："><a href="#0x05-php-filter的运用：" class="headerlink" title="0x05 php://filter的运用："></a>0x05 php://filter的运用：</h2><pre><code>- php://filter是php的一个协议，可作为一个中间流来处理其他流。
 - 其参数为：resource=&lt;要过滤的数据流&gt; 指定所要筛选过滤的数据流,read=&lt;读链的筛选列表&gt; 可以设定一个或多个过滤器名称,write=&lt;读链的筛选列表&gt; 可以设定一个或多个过滤器名称
     - 要过滤的数据流也可指要访问的网站页面
     - 读链的筛选列表：
@@ -361,7 +361,7 @@
         - 转换过滤器：
             `convert.base64-encode` =&gt; 等同于用 base64_encode() 函数处理所有的数据流，且支持由关联数组给出的参数值，其中line-length表示将输出的base64字符串将以该长度进行截取并成为块，line-break-chars表示在截取后以什么字符作为结尾标记符(如：\r\n)
             `convert.base64-decode` =&gt; 等同于用 base64_decode() 函数处理所有的数据流，只支持参数line-break-chars，与encode相同的作用，作为从编码载荷中剥离的类型提示，即告知结尾标记符的内容
-</code></pre><h2 id="php-input的利用："><a href="#php-input的利用：" class="headerlink" title="php://input的利用："></a>php://input的利用：</h2><h2 id="trim函数"><a href="#trim函数" class="headerlink" title="trim函数"></a>trim函数</h2><pre><code>- 移除字符串两侧的空白字符或其他预定义字符
+</code></pre><h2 id="0x06-php-input的利用："><a href="#0x06-php-input的利用：" class="headerlink" title="0x06 php://input的利用："></a>0x06 php://input的利用：</h2><h2 id="0x07-trim函数"><a href="#0x07-trim函数" class="headerlink" title="0x07 trim函数"></a>0x07 trim函数</h2><pre><code>- 移除字符串两侧的空白字符或其他预定义字符
 </code></pre>
       
     </div>
@@ -527,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GET方法"><span class="nav-number">1.</span> <span class="nav-text">$_GET方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POST方法："><span class="nav-number">2.</span> <span class="nav-text">$_POST方法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#php的strcmp函数："><span class="nav-number">3.</span> <span class="nav-text">php的strcmp函数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#extract变量覆盖："><span class="nav-number">4.</span> <span class="nav-text">extract变量覆盖：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#php-filter的运用："><span class="nav-number">5.</span> <span class="nav-text">php://filter的运用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#php-input的利用："><span class="nav-number">6.</span> <span class="nav-text">php://input的利用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#trim函数"><span class="nav-number">7.</span> <span class="nav-text">trim函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-GET方法"><span class="nav-number">1.</span> <span class="nav-text">0x01 $_GET方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-POST方法："><span class="nav-number">2.</span> <span class="nav-text">0x02 $_POST方法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-php的strcmp函数："><span class="nav-number">3.</span> <span class="nav-text">0x03 php的strcmp函数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-extract变量覆盖："><span class="nav-number">4.</span> <span class="nav-text">0x04 extract变量覆盖：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x05-php-filter的运用："><span class="nav-number">5.</span> <span class="nav-text">0x05 php://filter的运用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x06-php-input的利用："><span class="nav-number">6.</span> <span class="nav-text">0x06 php://input的利用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x07-trim函数"><span class="nav-number">7.</span> <span class="nav-text">0x07 trim函数</span></a></li></ol></div>
             
 
           </div>
