@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python," />
 
 
 
@@ -79,14 +79,18 @@
 
 
 
+<meta name="description" content="python 爬虫">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python spider">
 <meta property="og:url" content="http://zxc123yu.giyhub.io/2018/05/27/python-spider/index.html">
 <meta property="og:site_name" content="博客">
+<meta property="og:description" content="python 爬虫">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-27T09:28:33.241Z">
+<meta property="og:updated_time" content="2018-06-01T10:06:54.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python spider">
+<meta name="twitter:description" content="python 爬虫">
 
 
 
@@ -309,6 +313,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程语言/" itemprop="url" rel="index">
+                    <span itemprop="name">编程语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -336,7 +362,100 @@
       
 
       
-        
+        <p>python 爬虫<br><a id="more"></a></p>
+<h1 id="0x01-安装所需安装包"><a href="#0x01-安装所需安装包" class="headerlink" title="0x01 安装所需安装包"></a>0x01 安装所需安装包</h1><ul>
+<li>（基于python3.6环境下）</li>
+</ul>
+<ol>
+<li><p><code>BeautifulSoup</code> 安装</p>
+<ul>
+<li>安装命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-bs4   (Linux)</span><br><span class="line">pip install beautifulsoup4   (pyhton)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>scrapy</code>框架安装</p>
+<ul>
+<li>安装命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install scrapy   (仅在python2.7版本下才可使用)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>urllib</code>安装</p>
+<ul>
+<li>为python内置库，无需安装</li>
+</ul>
+</li>
+<li><code>requests</code>安装<ul>
+<li>安装命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="0x02-正则表达式模块的运用"><a href="#0x02-正则表达式模块的运用" class="headerlink" title="0x02 正则表达式模块的运用"></a>0x02 正则表达式模块的运用</h1><ol>
+<li><code>.match(pattern, string, flags)</code>方法<br> 判断是否匹配，如果匹配成功，返回一个<code>Match对象</code>，否则返回<code>None</code></li>
+<li><code>.split()</code>方法<br> 用正则表达式切分字符串</li>
+<li><code>.compile()</code>方法<br> 用于生成一个独立的规则模式，如：<code>regex=re.compile(r&#39;\w*o\w*&#39;)</code></li>
+<li><code>.sub(pattern，repl，string，count，flags)</code>方法<br> 用于通过正则式来实现字符串的替换处理<ul>
+<li>pattern：表示正则中的模式字符串</li>
+<li>epl，表示要被替换的，可以是字符串也可以是函数，<ul>
+<li>如果是字符串，则所有的反斜杠转义字符都会被处理</li>
+<li>\n：被处理为对应的换行符</li>
+<li>\r ：被处理为回车符</li>
+<li>不能被识别的转义字符，则只是被识别为普通的字符，例如：\j被处理为j这个字母本身</li>
+<li>反斜杠加g以及中括号内一个名字，即\g<name>对应命名了的组</name></li>
+</ul>
+</li>
+<li>string：要处理的字符串</li>
+<li>count：限定替换的个数，默认为替换所有</li>
+<li>flags：匹配模式，可以使用按位或‘|‘表示同时生效，也可以在正则表达式中指定。<ul>
+<li>re.I 忽略大小写</li>
+<li>re.L 表示特殊字符集\w,\W,\b,\B,\s,\S</li>
+<li>re.M 表示多行模式</li>
+<li>re.S ‘.’包括换行符在内的任意字符</li>
+<li>re.U 表示特殊字符集\w,\W,\b,\B,\d,\D,\s,\D</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="0x03-与mysql的联合运用-操作数据库"><a href="#0x03-与mysql的联合运用-操作数据库" class="headerlink" title="0x03 与mysql的联合运用-操作数据库"></a>0x03 与mysql的联合运用-操作数据库</h1><ol>
+<li>使用<code>pymysql.connect(host,post,username,password,database)</code>来连接数据库，<strong>database参数</strong>可为空，返回值为可操作数据库的句柄。</li>
+<li>可对句柄调用<code>.cursor()</code>方法获取操作指令光标用于数据库操作。若连接时所选数据库为空，则应对光标调用<code>.execute()</code>方法执行数据库使用指令。</li>
+<li>对于光标在每个过程结束后都应立即调用<code>.close()</code>方法进行销毁，对于句柄在完成所有的数据库操作后也应立即调用<code>.close()</code>方法进行销毁。</li>
+<li><code>.commit()</code>方法用于执行<em>插入</em>、<em>更新</em>、<em>删除</em>指令后提交数据库执行。</li>
+<li>对于<em>查询</em>指令，在光标执行命令结束后，可对光标调用以下三种方法：<ul>
+<li><code>fetchone()</code>：该方法获取下一个查询结果集。结果集是一个对象</li>
+<li><code>fetchall()</code>：接收全部的返回结果行.</li>
+<li><code>rowcount</code>：这是一个只读属性，并返回执行execute()方法后影响的行数。</li>
+</ul>
+</li>
+<li>在出现错误时，可对光标调用<code>.rollback()</code>方法来回滚当前游标的所有操作</li>
+</ol>
+<h1 id="0x04-BeautifulSoup使用"><a href="#0x04-BeautifulSoup使用" class="headerlink" title="0x04 BeautifulSoup使用"></a>0x04 BeautifulSoup使用</h1><ol>
+<li>解析方式<br> |解析库类型      |解析使用方式                       |<br> |:————–|:———————————|<br> |python标准库    |BeautifulSoup(html,’html.parser’) |<br> |lxml HTML解析库 |BeautifulSoup(html,’lxml’)        |<br> |lxml XML解析库  |BeautifulSoup(html,[‘lxml’,’xml’])|<br> |htm5lib解析库   |BeautifulSoup(html,’htm5llib’)    |</li>
+<li><p><code>findAll()</code> 和 <code>find()</code> 方法</p>
+<ul>
+<li><p>定义：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">findAll(tag, attributes, recursive, text, *limit*, keywords)  </span><br><span class="line">find(tag, attributes, recursive, text, keywords)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>参数声明：</p>
+<ol>
+<li>tag：标签参数，可定义一个标签名称或由多个标签名称组成的列表，类似于一个“或”关系的过滤器</li>
+<li>attributes：属性参数，用一个字典封装一个标签的若干属性和对应的属性值</li>
+<li>recursive：递归参数，是一个布尔变量，为True时,会根据要求去查找标签参数的所有子标签，以及子标签的子标签，默认值为<code>True</code></li>
+<li>text：文本参数，使用标签的文本内容去匹配</li>
+<li>limit：范围限制参数，只能使用与<code>findAll</code>方法中</li>
+<li>keyword：关键词参数，可以选择具有指定属性的标签</li>
+</ol>
+</li>
+<li>区别：<ul>
+<li><code>findAll()</code>方法返回的是符合要求的所有元素的列表，而<code>find()</code>方法则是直接返回符合要求的结果</li>
+<li><code>find()</code>方法等同于<code>findAll()</code>方法中的<code>limit</code>参数设置为<code>1</code>时的特例</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="0x05-urllib库的使用"><a href="#0x05-urllib库的使用" class="headerlink" title="0x05 urllib库的使用"></a>0x05 urllib库的使用</h1><h1 id="0x06-requests库的使用"><a href="#0x06-requests库的使用" class="headerlink" title="0x06 requests库的使用"></a>0x06 requests库的使用</h1>
       
     </div>
     
@@ -350,6 +469,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
       
 
       
@@ -369,6 +494,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/01/JavaScript/" rel="prev" title="JavaScript">
+                JavaScript <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -420,8 +549,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -440,12 +578,21 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             
@@ -453,7 +600,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -476,6 +623,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0x01-安装所需安装包"><span class="nav-number">1.</span> <span class="nav-text">0x01 安装所需安装包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x02-正则表达式模块的运用"><span class="nav-number">2.</span> <span class="nav-text">0x02 正则表达式模块的运用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x03-与mysql的联合运用-操作数据库"><span class="nav-number">3.</span> <span class="nav-text">0x03 与mysql的联合运用-操作数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x04-BeautifulSoup使用"><span class="nav-number">4.</span> <span class="nav-text">0x04 BeautifulSoup使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x05-urllib库的使用"><span class="nav-number">5.</span> <span class="nav-text">0x05 urllib库的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x06-requests库的使用"><span class="nav-number">6.</span> <span class="nav-text">0x06 requests库的使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
