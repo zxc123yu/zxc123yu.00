@@ -87,10 +87,12 @@
 <meta property="og:site_name" content="博客">
 <meta property="og:description" content="python 爬虫">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-01T10:06:54.768Z">
+<meta property="og:image" content="http://zxc123yu.giyhub.io/2018/05/27/python-spider/beautifulsoup_jiexiqi.PNG">
+<meta property="og:updated_time" content="2018-06-08T10:54:31.296Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python spider">
 <meta name="twitter:description" content="python 爬虫">
+<meta name="twitter:image" content="http://zxc123yu.giyhub.io/2018/05/27/python-spider/beautifulsoup_jiexiqi.PNG">
 
 
 
@@ -384,8 +386,33 @@
 <li>为python内置库，无需安装</li>
 </ul>
 </li>
-<li><code>requests</code>安装<ul>
+<li><p><code>requests</code>安装</p>
+<ul>
 <li>安装命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>Selenium</code>安装</p>
+<ul>
+<li>安装命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install  Selenium</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>Pillow</code>安装</p>
+<ul>
+<li><p>安装命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pillow</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>功能<br>  图像处理功能</p>
+</li>
+</ul>
+</li>
+<li><p><code>pytesseract</code>安装</p>
+<ul>
+<li><p>安装命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pytesseract</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>功能</p>
 </li>
 </ul>
 </li>
@@ -401,7 +428,7 @@
 <li>\n：被处理为对应的换行符</li>
 <li>\r ：被处理为回车符</li>
 <li>不能被识别的转义字符，则只是被识别为普通的字符，例如：\j被处理为j这个字母本身</li>
-<li>反斜杠加g以及中括号内一个名字，即\g<name>对应命名了的组</name></li>
+<li>反斜杠加g以及中括号内一个名字，即<code>\g&lt;name&gt;</code>对应命名了的组</li>
 </ul>
 </li>
 <li>string：要处理的字符串</li>
@@ -431,11 +458,11 @@
 <li>在出现错误时，可对光标调用<code>.rollback()</code>方法来回滚当前游标的所有操作</li>
 </ol>
 <h1 id="0x04-BeautifulSoup使用"><a href="#0x04-BeautifulSoup使用" class="headerlink" title="0x04 BeautifulSoup使用"></a>0x04 BeautifulSoup使用</h1><ol>
-<li>解析方式<br> |解析库类型      |解析使用方式                       |<br> |:————–|:———————————|<br> |python标准库    |BeautifulSoup(html,’html.parser’) |<br> |lxml HTML解析库 |BeautifulSoup(html,’lxml’)        |<br> |lxml XML解析库  |BeautifulSoup(html,[‘lxml’,’xml’])|<br> |htm5lib解析库   |BeautifulSoup(html,’htm5llib’)    |</li>
+<li>解析方式<br> <img src="/2018/05/27/python-spider/beautifulsoup_jiexiqi.PNG" alt="解析"></li>
 <li><p><code>findAll()</code> 和 <code>find()</code> 方法</p>
 <ul>
 <li><p>定义：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">findAll(tag, attributes, recursive, text, *limit*, keywords)  </span><br><span class="line">find(tag, attributes, recursive, text, keywords)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">findAll(tag, attributes, recursive, text, *limit*, keywords)</span><br><span class="line">find(tag, attributes, recursive, text, keywords)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>参数声明：</p>
 <ol>
@@ -455,7 +482,7 @@
 </ul>
 </li>
 </ol>
-<h1 id="0x05-urllib库的使用"><a href="#0x05-urllib库的使用" class="headerlink" title="0x05 urllib库的使用"></a>0x05 urllib库的使用</h1><h1 id="0x06-requests库的使用"><a href="#0x06-requests库的使用" class="headerlink" title="0x06 requests库的使用"></a>0x06 requests库的使用</h1>
+<h1 id="0x05-urllib库的使用"><a href="#0x05-urllib库的使用" class="headerlink" title="0x05 urllib库的使用"></a>0x05 urllib库的使用</h1><h1 id="0x06-requests库的使用"><a href="#0x06-requests库的使用" class="headerlink" title="0x06 requests库的使用"></a>0x06 requests库的使用</h1><h1 id="0x07-selenium库的使用"><a href="#0x07-selenium库的使用" class="headerlink" title="0x07 selenium库的使用"></a>0x07 selenium库的使用</h1>
       
     </div>
     
@@ -578,7 +605,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -633,7 +660,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0x01-安装所需安装包"><span class="nav-number">1.</span> <span class="nav-text">0x01 安装所需安装包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x02-正则表达式模块的运用"><span class="nav-number">2.</span> <span class="nav-text">0x02 正则表达式模块的运用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x03-与mysql的联合运用-操作数据库"><span class="nav-number">3.</span> <span class="nav-text">0x03 与mysql的联合运用-操作数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x04-BeautifulSoup使用"><span class="nav-number">4.</span> <span class="nav-text">0x04 BeautifulSoup使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x05-urllib库的使用"><span class="nav-number">5.</span> <span class="nav-text">0x05 urllib库的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x06-requests库的使用"><span class="nav-number">6.</span> <span class="nav-text">0x06 requests库的使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0x01-安装所需安装包"><span class="nav-number">1.</span> <span class="nav-text">0x01 安装所需安装包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x02-正则表达式模块的运用"><span class="nav-number">2.</span> <span class="nav-text">0x02 正则表达式模块的运用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x03-与mysql的联合运用-操作数据库"><span class="nav-number">3.</span> <span class="nav-text">0x03 与mysql的联合运用-操作数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x04-BeautifulSoup使用"><span class="nav-number">4.</span> <span class="nav-text">0x04 BeautifulSoup使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x05-urllib库的使用"><span class="nav-number">5.</span> <span class="nav-text">0x05 urllib库的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x06-requests库的使用"><span class="nav-number">6.</span> <span class="nav-text">0x06 requests库的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x07-selenium库的使用"><span class="nav-number">7.</span> <span class="nav-text">0x07 selenium库的使用</span></a></li></ol></div>
             
 
           </div>
