@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="php," />
+  <meta name="keywords" content="基础指令," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="php语言在网络安全方面的应用">
-<meta name="keywords" content="php">
+<meta name="description" content="hexo常用操作指令">
+<meta name="keywords" content="基础指令">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php相关知识点记录">
-<meta property="og:url" content="http://zxc123yu.giyhub.io/2018/05/24/php-context/index.html">
+<meta property="og:title" content="hexo基础指令">
+<meta property="og:url" content="http://zxc123yu.giyhub.io/2018/12/24/hexo基础指令/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="php语言在网络安全方面的应用">
+<meta property="og:description" content="hexo常用操作指令">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-28T06:18:59.898Z">
+<meta property="og:updated_time" content="2018-12-24T08:21:29.264Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php相关知识点记录">
-<meta name="twitter:description" content="php语言在网络安全方面的应用">
+<meta name="twitter:title" content="hexo基础指令">
+<meta name="twitter:description" content="hexo常用操作指令">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://zxc123yu.giyhub.io/2018/05/24/php-context/"/>
+  <link rel="canonical" href="http://zxc123yu.giyhub.io/2018/12/24/hexo基础指令/"/>
 
 
 
 
 
-  <title>php相关知识点记录 | 博客</title>
+  <title>hexo基础指令 | 博客</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zxc123yu.giyhub.io/2018/05/24/php-context/">
+    <link itemprop="mainEntityOfPage" href="http://zxc123yu.giyhub.io/2018/12/24/hexo基础指令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zxc123yu">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">php相关知识点记录</h1>
+          <h1 class="post-title" itemprop="name headline">hexo基础指令</h1>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-24T17:41:35+08:00">
-                2018-05-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-24T15:27:17+08:00">
+                2018-12-24
               </time>
             
 
@@ -325,8 +325,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程语言/" itemprop="url" rel="index">
-                    <span itemprop="name">编程语言</span>
+                  <a href="/categories/平台运用/" itemprop="url" rel="index">
+                    <span itemprop="name">平台运用</span>
                   </a>
                 </span>
 
@@ -362,29 +362,118 @@
       
 
       
-        <p>php语言在网络安全方面的应用<br> <a id="more"></a></p>
-<h2 id="0x01-GET方法"><a href="#0x01-GET方法" class="headerlink" title="0x01 $_GET方法"></a>0x01 $_GET方法</h2><pre><code>- 直接在网页浏览器地址栏加上&apos;?[变量名]=[变量值]&apos;
-- 在第一种方法不行时，尝试采用%00进行截断，特别是对那些变量值先后进行字符和数字判断时
-</code></pre><h2 id="0x02-POST方法："><a href="#0x02-POST方法：" class="headerlink" title="0x02 $_POST方法："></a>0x02 $_POST方法：</h2><pre><code>1. 使用抓包工具(如：burpsuite)修改数据包中的变量值
-2. 使用浏览器插件(如：FireFox的hackbar)生成所需变量值的URL路径
-3. 使用python爬虫代码将所需变量值通过requests方法与URL合并并读取响应内容
-</code></pre><h2 id="0x03-php的strcmp函数："><a href="#0x03-php的strcmp函数：" class="headerlink" title="0x03 php的strcmp函数："></a>0x03 php的strcmp函数：</h2><pre><code>- 在使用时，除了该函数本身所拥有的判断条件，即两者相等等于零，前者大就大于零，反之小于零外，当前者的类型与后者不相等时，如前者为数组，后者为数字或字符串时，也会报错，返回值为零。（注：数字与字符串之间是）
-- 原理：其实php为了可以上传一个数组，会把结尾带一对中括号的变量，例如 xxx[]的name（就是$_POST中的key），当作一个名字为xxx的数组
-</code></pre><h2 id="0x04-extract变量覆盖："><a href="#0x04-extract变量覆盖：" class="headerlink" title="0x04 extract变量覆盖："></a>0x04 extract变量覆盖：</h2><pre><code>extract函数会将所传入的数组值按照参数名与参数值之间的关系生成代码变量，导入到当前符号表中。对于在函数调用前就已定义好的变量名，若数组内有参数名与其相同，则会覆盖该变量的定义值，造成变量覆盖问题。
-</code></pre><h2 id="0x05-php-filter的运用："><a href="#0x05-php-filter的运用：" class="headerlink" title="0x05 php://filter的运用："></a>0x05 php://filter的运用：</h2><pre><code>- php://filter是php的一个协议，可作为一个中间流来处理其他流。
-- 其参数为：resource=&lt;要过滤的数据流&gt; 指定所要筛选过滤的数据流,read=&lt;读链的筛选列表&gt; 可以设定一个或多个过滤器名称,write=&lt;读链的筛选列表&gt; 可以设定一个或多个过滤器名称
-    - 要过滤的数据流也可指要访问的网站页面
-    - 读链的筛选列表：
-        - 字符串过滤器：
-            string.rot13 =&gt; 将字符串的每个字母向前移动13个字母（如：a &lt;=&gt; n）
-            string.toupper =&gt; 将原字母字符串全部转换为大写字母
-            string.tolower =&gt; 将原字母字符串全部转换为小写字母
-            string.strip_tags =&gt; 剥去字符串中除给定标签外的其他所有标签，若无给定允许标签，则默认清除所有标签
-        - 转换过滤器：
-            `convert.base64-encode` =&gt; 等同于用 base64_encode() 函数处理所有的数据流，且支持由关联数组给出的参数值，其中line-length表示将输出的base64字符串将以该长度进行截取并成为块，line-break-chars表示在截取后以什么字符作为结尾标记符(如：\r\n)
-            `convert.base64-decode` =&gt; 等同于用 base64_decode() 函数处理所有的数据流，只支持参数line-break-chars，与encode相同的作用，作为从编码载荷中剥离的类型提示，即告知结尾标记符的内容
-</code></pre><h2 id="0x06-php-input的利用："><a href="#0x06-php-input的利用：" class="headerlink" title="0x06 php://input的利用："></a>0x06 php://input的利用：</h2><h2 id="0x07-trim函数"><a href="#0x07-trim函数" class="headerlink" title="0x07 trim函数"></a>0x07 trim函数</h2><pre><code>- 移除字符串两侧的空白字符或其他预定义字符
-</code></pre>
+        <p><em>hexo常用操作指令</em></p>
+<a id="more"></a>
+<p>#</p>
+<h2 id="常用指令集"><a href="#常用指令集" class="headerlink" title="常用指令集"></a>常用指令集</h2><h3 id="安装-hexo"><a href="#安装-hexo" class="headerlink" title="安装 hexo"></a>安装 hexo</h3><ul>
+<li><code>npm install hexo -g</code> #安装  </li>
+<li><code>npm update hexo -g</code> #升级  </li>
+<li><code>hexo init</code> #初始化</li>
+</ul>
+<h3 id="常用简写"><a href="#常用简写" class="headerlink" title="常用简写"></a>常用简写</h3><ul>
+<li><strong>新建文章</strong>  <code>hexo n &quot;我的博客&quot;</code> == <code>hexo new &quot;我的博客&quot;</code> </li>
+<li><code>hexo p</code> == <code>hexo publish</code></li>
+<li><strong>生成</strong> <code>hexo g</code> == <code>hexo generate</code></li>
+<li><strong>启动服务预览</strong> <code>hexo s</code> == <code>hexo server</code></li>
+<li><strong>部署</strong> <code>hexo d</code> == <code>hexo deploy</code></li>
+</ul>
+<h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><ul>
+<li><code>hexo server</code> #Hexo 会监视文件变动并自动更新，您无须重启服务器。</li>
+<li><code>hexo server -s</code> #静态模式</li>
+<li><code>hexo server -p 5000</code> #更改端口</li>
+<li><p><code>hexo server -i 192.168.1.1</code> #自定义 IP</p>
+</li>
+<li><p><code>hexo clean</code> #清除缓存 网页正常情况下可以忽略此条命令</p>
+</li>
+<li><code>hexo g</code> #生成静态网页</li>
+<li><code>hexo d</code> #开始部署</li>
+</ul>
+<h3 id="监视文件变动"><a href="#监视文件变动" class="headerlink" title="监视文件变动"></a>监视文件变动</h3><ul>
+<li><code>hexo generate</code> #使用 Hexo 生成静态文件快速而且简单</li>
+<li><code>hexo generate --watch</code> #监视文件变动</li>
+</ul>
+<h3 id="完成后部署"><a href="#完成后部署" class="headerlink" title="完成后部署"></a>完成后部署</h3><p>以下两个命令的作用是相同的</p>
+<blockquote>
+<p><code>hexo generate --deploy</code><br><code>hexo deploy --generate</code></p>
+</blockquote>
+<blockquote>
+<p><code>hexo deploy -g</code><br><code>hexo server -g</code></p>
+</blockquote>
+<h3 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h3><ul>
+<li><code>hexo publish [layout] &lt;title&gt;</code></li>
+</ul>
+<h3 id="模版"><a href="#模版" class="headerlink" title="模版"></a>模版</h3><ul>
+<li><code>hexo new &quot;postName&quot;</code> #新建文章</li>
+<li><code>hexo new page &quot;pageName&quot;</code> #新建页面</li>
+<li><code>hexo generate</code> #生成静态页面至public目录</li>
+<li><code>hexo server</code> #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）</li>
+<li><p><code>hexo deploy</code> #将.deploy目录部署到GitHub</p>
+</li>
+<li><p><code>hexo new [layout] &lt;title&gt;</code></p>
+</li>
+<li><code>hexo new photo &quot;My Gallery&quot;</code></li>
+<li><code>hexo new &quot;Hello World&quot; --lang tw</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">变量</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>layout|布局|<br>title|标题<br>date|文件建立日期<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">title: 使用Hexo搭建个人博客</span><br><span class="line">layout: post</span><br><span class="line">date: 2014-03-03 19:07:43</span><br><span class="line">comments: true</span><br><span class="line">categories: Blog</span><br><span class="line">tags: [Hexo]</span><br><span class="line">keywords: Hexo, Blog</span><br><span class="line">description: 生命在于折腾，又把博客折腾到Hexo了。给Hexo点赞。</span><br></pre></td></tr></table></figure></p>
+<h3 id="模版（Scaffold）"><a href="#模版（Scaffold）" class="headerlink" title="模版（Scaffold）"></a>模版（Scaffold）</h3><ul>
+<li><code>hexo new photo &quot;My Gallery&quot;</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">变量</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>layout|布局<br>title|标题<br>date|文件建立日期</p>
+<p>###设置文章摘要</p>
+<blockquote>
+<p>以上是文章摘要 <!--more--> 以下是余下全文 </p>
+</blockquote>
+<p>###写作</p>
+<ul>
+<li><code>hexo new page &lt;title&gt;</code></li>
+<li><code>hexo new post &lt;title&gt;</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">变量</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>:title|标题<br>:year|建立的年份（4 位数）<br>:month|建立的月份（2 位数）<br>:i_month|建立的月份（去掉开头的零）<br>:day|建立的日期（2 位数）<br>:i_day|建立的日期（去掉开头的零）</p>
+<h3 id="推送到服务器上"><a href="#推送到服务器上" class="headerlink" title="推送到服务器上"></a>推送到服务器上</h3><ul>
+<li><code>hexo n</code> #写文章</li>
+<li><code>hexo g</code> #生成</li>
+<li><code>hexo d</code> #部署 #可与hexo g合并为 hexo d -g</li>
+</ul>
+
       
     </div>
     
@@ -401,7 +490,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/php/" rel="tag"># php</a>
+            <a href="/tags/基础指令/" rel="tag"># 基础指令</a>
           
         </div>
       
@@ -414,15 +503,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/06/08/sql-inject/" rel="next" title="sql-inject">
+                <i class="fa fa-chevron-left"></i> sql-inject
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/27/python-spider/" rel="prev" title="python spider">
-                python spider <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -558,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-GET方法"><span class="nav-number">1.</span> <span class="nav-text">0x01 $_GET方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-POST方法："><span class="nav-number">2.</span> <span class="nav-text">0x02 $_POST方法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-php的strcmp函数："><span class="nav-number">3.</span> <span class="nav-text">0x03 php的strcmp函数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-extract变量覆盖："><span class="nav-number">4.</span> <span class="nav-text">0x04 extract变量覆盖：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x05-php-filter的运用："><span class="nav-number">5.</span> <span class="nav-text">0x05 php://filter的运用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x06-php-input的利用："><span class="nav-number">6.</span> <span class="nav-text">0x06 php://input的利用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x07-trim函数"><span class="nav-number">7.</span> <span class="nav-text">0x07 trim函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用指令集"><span class="nav-number">1.</span> <span class="nav-text">常用指令集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-hexo"><span class="nav-number">1.1.</span> <span class="nav-text">安装 hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用简写"><span class="nav-number">1.2.</span> <span class="nav-text">常用简写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器"><span class="nav-number">1.3.</span> <span class="nav-text">服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监视文件变动"><span class="nav-number">1.4.</span> <span class="nav-text">监视文件变动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成后部署"><span class="nav-number">1.5.</span> <span class="nav-text">完成后部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#草稿"><span class="nav-number">1.6.</span> <span class="nav-text">草稿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模版"><span class="nav-number">1.7.</span> <span class="nav-text">模版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模版（Scaffold）"><span class="nav-number">1.8.</span> <span class="nav-text">模版（Scaffold）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送到服务器上"><span class="nav-number">1.9.</span> <span class="nav-text">推送到服务器上</span></a></li></ol></li></ol></div>
             
 
           </div>
