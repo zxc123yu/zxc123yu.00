@@ -634,7 +634,7 @@
 </li>
 <li>需要特别指出的是，正则匹配默认是<strong>贪婪匹配</strong>，也就是匹配<strong>尽可能多</strong>的字符。</li>
 <li><p><strong>非贪婪匹配</strong>（也就是<strong>尽可能少</strong>匹配）:加个<code>?</code>就可以让RegExp采用非贪婪匹配，如：</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> re = <span class="regexp">/^(\d+)(0*)$/</span>;  &lt;!--贪婪匹配--&gt;</span><br><span class="line">re.exec('102300');    &lt;!--['102300', '102300', '']</span><br><span class="line">var re = /^(\d+?)(0*)$/;  #非贪婪匹配</span><br><span class="line">re.exec('102300');  ['102300', '1023', '00']</span><br></pre></td></tr></table></figure>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> re = <span class="regexp">/^(\d+)(0*)$/</span>;  <span class="xml"><span class="comment">&lt;!--贪婪匹配--&gt;</span></span></span><br><span class="line"><span class="xml">re.exec('102300');    <span class="comment">&lt;!--['102300', '102300', '']</span></span></span><br><span class="line"><span class="xml">var re = /^(\d+?)(0*)$/;  #非贪婪匹配</span></span><br><span class="line"><span class="xml">re.exec('102300');  ['102300', '1023', '00']</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>JavaScript的正则表达式还有几个特殊的标志，最常用的是<code>g</code>，表示全局匹配</p>
 <ul>
@@ -1316,7 +1316,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1338,7 +1338,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
